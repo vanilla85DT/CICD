@@ -18,6 +18,7 @@ pipeline {
             stage('Build Docker Image') {
                 steps {
                     script {
+                        sh 'docker pull --disable-content-trust=false node:20-alpine'
                         sh 'docker build -t csi402-app-image .'
 
                         sh 'docker run -d --name csi-container -p 54100:3000 csi402-app-image:latest'

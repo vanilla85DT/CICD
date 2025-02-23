@@ -12,6 +12,6 @@ COPY . .
 RUN npm run build
 
 # Expose both ports 80 and 3000
-EXPOSE 80 5000
+EXPOSE 3000
 
 CMD ["npm", "run" , "dev"]

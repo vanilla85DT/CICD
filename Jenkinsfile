@@ -18,10 +18,10 @@ pipeline {
             stage('Build Docker Image') {
                 steps {
                     script {
-                        sh '/usr/local/bin/docker/docker pull --disable-content-trust=false node:20-alpine'
-                        sh '/usr/local/bin/docker/docker build -t csi402-app-image .'
+                        sh '/usr/local/bin/docker pull --disable-content-trust=false node:20-alpine'
+                        sh '/usr/local/bin/docker build -t csi402-app-image .'
 
-                        sh '/usr/local/bin/docker/docker run -d --name csi-container -p 54100:3000 csi402-app-image:latest'
+                        sh '/usr/local/bin/docker run -d --name csi-container -p 54100:3000 csi402-app-image:latest'
                     }
                 }
             }
